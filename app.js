@@ -9,9 +9,9 @@ var dbConfig = require('./db');
 var mongoose = require('mongoose');
 // Connect to DB
 mongoose.connect(dbConfig.url);
-
 var app = express();
-
+// import bills.js
+var bills = require('./routes/bills')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -42,7 +42,10 @@ initPassport(passport);
 
 var routes = require('./routes/index')(passport);
 app.use('/', routes);
-
+app.get('/bill', function(req, res, next) {
+	res.render('bill');
+});
+app.post('/bill', bills.list);
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

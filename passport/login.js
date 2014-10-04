@@ -12,7 +12,7 @@ module.exports = function(passport) {
 		function(err, user) {
 			if (err)
 				return done(err);
-				if (!user){
+				if (!user) {
 					console.log('User Not Found with username '+username);
 					return done(null, false, req.flash('message', 'User not found.'));
 				}
