@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var dbConfig = require('./db');
 var mongoose = require('mongoose');
 // Connect to DB
-mongoose.connect(dbConfig.url);
+var db = mongoose.connect(dbConfig.url);
 var app = express();
 // import bills.js
 var bills = require('./routes/bills')
@@ -46,6 +46,7 @@ app.get('/bill', function(req, res, next) {
 	res.render('bill');
 });
 app.post('/bill', bills.list);
+console.log(db.models.Bill.db);
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

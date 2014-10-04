@@ -1,3 +1,6 @@
+var dbConfig = require('../db');
+var mongoose = require('mongoose');
+// Connect to DB
 var Bill = require('../models/bill');
 
 module.exports = {
