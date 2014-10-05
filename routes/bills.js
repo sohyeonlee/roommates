@@ -15,15 +15,11 @@ module.exports = {
 			console.log('Error in saving bill: '+err);
 			throw err
 		} 
-		var billdata;
-		// Find all movies.
-		Bill.find(function(err, movies) {
+		// Find all bills.
+		Bill.find(function(err, brownies) {
 		  if (err) return console.error(err);
-		  billdata = movies;
-		  console.dir(movies);
+		  res.send(brownies);
 		});
-		
-		res.send(billdata);
 	});
 }	
 }
