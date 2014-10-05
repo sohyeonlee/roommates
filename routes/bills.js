@@ -12,7 +12,11 @@ module.exports = {
 			console.log('Error in saving bill: '+err);
 			throw err
 		}
-		res.send(newBill);
+		Bill.find(function (err, brownies) {
+			if (err) return console.error(err);
+			res.send(brownies);
+		}
+		// res.sendfile('views/index.html');
 	});
 }
 }
