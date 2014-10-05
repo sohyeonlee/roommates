@@ -8,10 +8,16 @@ var bodyParser = require('body-parser');
 var dbConfig = require('./db');
 var mongoose = require('mongoose');
 // Connect to DB
-var db = mongoose.connect(dbConfig.url);
+mongoose.connect(dbConfig.url);
+var mydb = mongoose.connection;
 var app = express();
 // import bills.js
 var bills = require('./routes/bills')
+// import lists.js
+var lists = require('./routes/lists');
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -39,14 +45,21 @@ app.use(flash());
 // Initialize Passport
 var initPassport = require('./passport/init');
 initPassport(passport);
-
 var routes = require('./routes/index')(passport);
 app.use('/', routes);
+//Expenses
 app.get('/bill', function(req, res, next) {
 	res.render('bill');
 });
+
+
 app.post('/bill', bills.list);
-console.log(db.models.Bill.db);
+
+//Lists
+app.get('/list', function(req, res, next) {
+	res.render('list');
+});
+app.post('/list', lists.add);
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

@@ -1,7 +1,7 @@
 var dbConfig = require('../db');
 var mongoose = require('mongoose');
 // Connect to DB
-var Bill = require('../models/bill');
+var Bill = mongoose.model('Bill', require('../models/bill'));  
 
 module.exports = {
 	list: function(req, res, next) {
@@ -14,8 +14,16 @@ module.exports = {
 		if (err) {
 			console.log('Error in saving bill: '+err);
 			throw err
-		}
-		res.send(newBill);
+		} 
+		var billdata;
+		// Find all movies.
+		Bill.find(function(err, movies) {
+		  if (err) return console.error(err);
+		  billdata = movies;
+		  console.dir(movies);
+		});
+		
+		res.send(billdata);
 	});
-}
+}	
 }
