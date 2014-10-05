@@ -1,0 +1,176 @@
+doctype html
+#wrapper
+  // Navigation
+  nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+    // Brand and toggle get grouped for better mobile display
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='index.html') SB Admin
+    // Top Menu Items
+    ul.nav.navbar-right.top-nav
+      li.dropdown
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          i.fa.fa-envelope
+          b.caret
+        ul.dropdown-menu.message-dropdown
+          li.message-preview
+            a(href='#')
+              .media
+                span.pull-left
+                  img.media-object(src='http://placehold.it/50x50', alt='')
+                .media-body
+                  h5.media-heading
+                    strong John Smith
+                  p.small.text-muted
+                    i.fa.fa-clock-o
+                    | Yesterday at 4:32 PM
+                  p Lorem ipsum dolor sit amet, consectetur...
+          li.message-preview
+            a(href='#')
+              .media
+                span.pull-left
+                  img.media-object(src='http://placehold.it/50x50', alt='')
+                .media-body
+                  h5.media-heading
+                    strong John Smith
+                  p.small.text-muted
+                    i.fa.fa-clock-o
+                    | Yesterday at 4:32 PM
+                  p Lorem ipsum dolor sit amet, consectetur...
+          li.message-preview
+            a(href='#')
+              .media
+                span.pull-left
+                  img.media-object(src='http://placehold.it/50x50', alt='')
+                .media-body
+                  h5.media-heading
+                    strong John Smith
+                  p.small.text-muted
+                    i.fa.fa-clock-o
+                    | Yesterday at 4:32 PM
+                  p Lorem ipsum dolor sit amet, consectetur...
+          li.message-footer
+            a(href='#') Read All New Messages
+      li.dropdown
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          i.fa.fa-bell
+          b.caret
+        ul.dropdown-menu.alert-dropdown
+          li
+            a(href='#')
+              | Alert Name
+              span.label.label-default Alert Badge
+          li
+            a(href='#')
+              | Alert Name
+              span.label.label-primary Alert Badge
+          li
+            a(href='#')
+              | Alert Name
+              span.label.label-success Alert Badge
+          li
+            a(href='#')
+              | Alert Name
+              span.label.label-info Alert Badge
+          li
+            a(href='#')
+              | Alert Name
+              span.label.label-warning Alert Badge
+          li
+            a(href='#')
+              | Alert Name
+              span.label.label-danger Alert Badge
+          li.divider
+          li
+            a(href='#') View All
+      li.dropdown
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          i.fa.fa-user
+          | John Smith
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href='#')
+              i.fa.fa-fw.fa-user
+              | Profile
+          li
+            a(href='#')
+              i.fa.fa-fw.fa-envelope
+              | Inbox
+          li
+            a(href='#')
+              i.fa.fa-fw.fa-gear
+              | Settings
+          li.divider
+          li
+            a(href='#')
+              i.fa.fa-fw.fa-power-off
+              | Log Out
+    // Sidebar Menu Items - These collapse to the responsive navigation menu on small screens
+    .collapse.navbar-collapse.navbar-ex1-collapse
+      ul.nav.navbar-nav.side-nav
+        li
+          a(href='index.html')
+            i.fa.fa-fw.fa-dashboard
+            | Dashboard
+        li
+          a(href='charts.html')
+            i.fa.fa-fw.fa-bar-chart-o
+            | Charts
+        li
+          a(href='tables.html')
+            i.fa.fa-fw.fa-table
+            | Tables
+        li
+          a(href='forms.html')
+            i.fa.fa-fw.fa-edit
+            | Forms
+        li
+          a(href='bootstrap-elements.html')
+            i.fa.fa-fw.fa-desktop
+            | Bootstrap Elements
+        li
+          a(href='bootstrap-grid.html')
+            i.fa.fa-fw.fa-wrench
+            | Bootstrap Grid
+        li
+          a(href='javascript:;', data-toggle='collapse', data-target='#demo')
+            i.fa.fa-fw.fa-arrows-v
+            | Dropdown
+            i.fa.fa-fw.fa-caret-down
+          ul#demo.collapse
+            li
+              a(href='#') Dropdown Item
+            li
+              a(href='#') Dropdown Item
+        li.active
+          a(href='blank-page.html')
+            i.fa.fa-fw.fa-file
+            | Blank Page
+    // /.navbar-collapse
+  #page-wrapper
+    .container-fluid
+      // Page Heading
+      .row
+        .col-lg-12
+          h1.page-header
+            | Blank Page
+            small Subheading
+          ol.breadcrumb
+            li
+              i.fa.fa-dashboard
+              a(href='index.html') Dashboard
+            li.active
+              i.fa.fa-file
+              | Blank Page
+      // /.row
+      iframe#cv_if5(src='http://cdn.instantcal.com/cvir.html?id=cv_nav5&file=http%3A%2F%2Fwww.instantcal.com%2Ftest.ics&theme=XGY&ccolor=%23ffffc0&dims=1&gtype=cv_monthgrid&gcloseable=0&gnavigable=1&gperiod=month&itype=cv_simpleevent', allowtransparency='true', scrolling='no', frameborder='0', height='600', width='800')
+    // /.container-fluid
+  // /#page-wrapper
+// /#wrapper
+// jQuery Version 1.11.0
+script(src='js/jquery-1.11.0.js')
