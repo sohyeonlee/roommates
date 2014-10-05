@@ -49,7 +49,7 @@ var routes = require('./routes/index')(passport);
 app.use('/', routes);
 //Expenses
 app.get('/bill', function(req, res, next) {
-	res.render('calendar');
+	res.render('charts');
 });
 
 
