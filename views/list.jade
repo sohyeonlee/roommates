@@ -12,3 +12,19 @@ block content
         input.form-control(name='content', placeholder='item', required='', type='text')
         button.btn.btn-lg.btn-primary.btn-block(type='submit') Post
         span.clearfix
+
+extends layout
+block content
+	div.container
+		div.row
+			div.col-sm-6.col-md-4.col-md-offset-4
+				h1.text-center.login-title Registration Details
+					div.signup-wall
+						form(class='form-list', action='/list', method='POST')
+							input(type='text', name='username', class='form-control', placeholder='Username',required, autofocus)
+							input(type='text', name='content', class='form-control', placeholder='Content',required)
+							button(class='btn btn-lg btn-primary btn-block', type='submit') Post
+							span.clearfix
+					#message
+						if message
+							h1.text-center.error-message #{message}

@@ -21,6 +21,13 @@ var lists = require('./routes/lists');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+//static folders import
+app.use("/css", express.static(__dirname + '/css'));
+app.use("/img", express.static(__dirname + '/img'));
+app.use("/js", express.static(__dirname + '/js'));
+app.use("/fonts", express.static(__dirname + '/fonts'));
+app.use("/less", express.static(__dirname + '/less'));
+app.use("/font2", express.static(__dirname + '/font-awesome-4.1.0'));
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -47,9 +54,16 @@ var initPassport = require('./passport/init');
 initPassport(passport);
 var routes = require('./routes/index')(passport);
 app.use('/', routes);
+
+//home
+app.get('/', function(req, res, next) {
+	res.render('home');
+});
+
 //Expenses
 app.get('/bill', function(req, res, next) {
-	res.render('charts');
+	res.render('bill');
+	console.log("hi");
 });
 
 
